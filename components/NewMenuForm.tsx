@@ -4,14 +4,13 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const NewMenuForm = ({ hook }) => {
-    const [ submit, setSubmit ] = hook
+    const [ trigger, setTrigger ] = hook
     const [ formData, setFormData ] = useState({
         name: '',
         category: '',
         description: '',
-        price: 0
+        price: ''
     })
-    let prv = false
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,12 +21,7 @@ const NewMenuForm = ({ hook }) => {
     }
 
     const handleSubmit = async (e): Promise<null> => {
-        e.preventDefault()
-
-        if (formData.date == '') {
-            return
-        }
-        if (formData.time_slot_id=='') {
+        if (formData.name === '' || formData.category === '' || formData.description === '' || formData.price === '') {
             return
         }
 
@@ -35,7 +29,7 @@ const NewMenuForm = ({ hook }) => {
         if (!response.ok)
             return
 
-        setSubmit(prv => !prv)
+        setTrigger(trigger + 1)
     }
 
     return (

@@ -10,7 +10,7 @@ import NewMenuForm from '@/components/NewMenuForm'
 const Admin = () => {
     const [ keyword, setKeyword ] = useState('')
     const [ menus, setMenus ] = useState([])
-    const [ submit, setSubmit ] = useState(false)
+    const [ trigger, setTrigger ] = useState(false)
 
     const fetchMenus = async () => {
         try {
@@ -26,7 +26,7 @@ const Admin = () => {
     
     useEffect(() => {
         fetchMenus()
-    }, [ keyword, submit ])
+    }, [ keyword, trigger ])
 
     return (
         <div className='container'>
@@ -34,7 +34,7 @@ const Admin = () => {
                 <SearchBar hook={ [keyword, setKeyword ] } />
             </header>
             <aside>
-                <NewMenuForm hook={ [ submit, setSubmit ] } />
+                <NewMenuForm hook={ [ trigger, setTrigger ] } />
             </aside>
             <main>
                 { menus.map((menu, index) => {

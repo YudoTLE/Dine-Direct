@@ -112,6 +112,7 @@
     padding: 0.5rem 4em;
     border: none;
     box-sizing: border-box;
+    text-decoration: none;
     cursor: pointer;
 }
 .button-white {
@@ -202,9 +203,9 @@
     max-width: 6rem;
 }
 
-button {
+button, Link {
     transition: transform 0.1s ease-out;
 }
-button:hover {
+button:hover, Link:hover {
     transform: scale(102%);
 }

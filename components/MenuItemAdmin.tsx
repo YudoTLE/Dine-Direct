@@ -15,21 +15,20 @@ const MenuItem = ({ menu }) => {
     }
 
     return (
-        <div className='card-white'>
+        <form className='card-white'>
             <div className={ reCatrgoryTag[category] }><h3>{ category }</h3></div>
             <h1>{ name }</h1>
             <p>{ description }</p>
             <h2>{ price }</h2>
             <div className='action'>
                 <button
-                    type='button'
                     className='button-blue'
                     onClick={ handleDeletion }
                 >
                     <h2>Hapus</h2>
                 </button>
             </div>
-        </div>
+        </form>
     )
 }
 
